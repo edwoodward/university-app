@@ -1,0 +1,19 @@
+<h3 class='center-align'>Students</h3>
+
+<div class="row">
+  <%  @students.each do |student| %>
+    <div class="col s6 m6">
+      <div class="card blue lighten-1">
+        <div class="card-content white-text">
+          <span class="card-title"><%= student.name %></span>
+          <p><%= student.email %></p>
+          <p>Course Enrollment: none</p>
+        </div>
+        <div class="card-action">
+          <a href="#">View</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

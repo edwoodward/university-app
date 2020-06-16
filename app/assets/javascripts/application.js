@@ -22,4 +22,6 @@ $(document).on('turbolinks:load', function() {
 
   $('.sidenav').sidenav();
 
+  $('#fade-target').fadeOut(5000);
+
 })

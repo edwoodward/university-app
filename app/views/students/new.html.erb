@@ -1,0 +1,45 @@
+<% if @student.errors.any? %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card-panel pink lighten-5">
+        <p><strong>Please correct these errors</strong></p>
+        <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<h3 class='center-align'>New Student</h3>
+
+<div class="container">
+  <div class="row center">
+    <div class="col s12 m12 l12">
+      <div class="row">
+        <%= form_for @student do |f| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_field :name, placeholder: "Name" %>
+              <%= f.label :name, "Name" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.email_field :email, placeholder: "Email" %>
+              <%= f.label :email, "Email" %>
+            </div>
+          </div>
+          <div>
+            <%= f.submit "Sign up", class: "btn blue lighten-2" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
