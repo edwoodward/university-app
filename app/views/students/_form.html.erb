@@ -1,0 +1,30 @@
+<%= render 'shared/error', obj: @student %>
+
+<h3 class='center-align'><%= @student.new_record? ? "New Student" : "Edit Profile" %></h3>
+
+<div class="container">
+  <div class="row center">
+    <div class="col s12 m12 l12">
+      <div class="row">
+        <%= form_for @student do |f| %>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_field :name, placeholder: "Name" %>
+              <%= f.label :name, "Name" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.email_field :email, placeholder: "Email" %>
+              <%= f.label :email, "Email" %>
+            </div>
+          </div>
+          <div>
+            <%= f.submit(@student.new_record? ? "Sign up" : "Update", class: "btn blue lighten-2") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

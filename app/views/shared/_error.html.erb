@@ -1,0 +1,16 @@
+<% if obj.errors.any? %>
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card-panel pink lighten-5">
+        <p><strong>Please correct these errors</strong></p>
+        <ul>
+        <% obj.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
