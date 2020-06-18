@@ -10,17 +10,23 @@
           <div class="row">
             <div class="input-field col s12">
               <%= f.text_field :name, placeholder: "Name" %>
-              <%= f.label :name, "Name" %>
+              <%= f.label :name, "Name", class: 'active' %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <%= f.email_field :email, placeholder: "Email" %>
-              <%= f.label :email, "Email" %>
+              <%= f.label :email, "Email", class: 'active' %>
+            </div>
+          </div>
+          <div class="row"> 
+            <div class="input-field col s12"> 
+              <%= f.password_field  :password, placeholder: "Choose a password" %>
+              <%= f.label :password, "Password", class: 'active' %>
             </div>
           </div>
           <div>
-            <%= f.submit(@student.new_record? ? "Sign up" : "Update", class: "btn blue lighten-2") %>
+            <%= f.button @student.new_record? ? ('<i class="material-icons left">arrow_forward</i>Sign Up').html_safe : '<i class="material-icons left">arrow_forward</i>Update'.html_safe, class: "btn blue lighten-2" %>
           </div>
         <% end %>
       </div>
